@@ -3,31 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Báo cáo Giải Ngân Chi Tiết</title>
+  <title>Báo cáo Giải Ngân Chi Tiết | Ban QLDA Giao thông & Nông nghiệp Đà Nẵng</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { 
-      font-family: 'Segoe UI', sans-serif; 
-      background: #0a1628; /* Nền tối để làm nổi bật biểu đồ */
+      font-family: 'Segoe UI', system-ui, sans-serif; 
+      background: #0a1628; 
       color: #fff;
     }
 
     /* Tiêu đề ghim phía trên */
     .header {
-      position: fixed; top: 0; width: 100%; height: 40px;
+      position: fixed; top: 0; width: 100%; height: 45px;
       background: rgba(27, 58, 107, 0.95);
       display: flex; justify-content: space-between; align-items: center;
-      padding: 0 20px; z-index: 1000; font-size: 14px; font-weight: bold;
+      padding: 0 20px; z-index: 1000; font-size: 13px; font-weight: bold;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
-    /* Container cho biểu đồ: Mỗi cái chiếm 100% chiều cao màn hình */
+    .nav-links { display: flex; gap: 8px; font-size: 11px; align-items: center; }
+    .nav-links span { opacity: 0.7; }
+    .nav-links a { color: #7DD3FC; text-decoration: none; padding: 3px 8px; background: rgba(255,255,255,0.1); border-radius: 4px; transition: background 0.2s; }
+    .nav-links a:hover { background: rgba(255,255,255,0.25); }
+
     .chart-section {
       width: 100%;
-      height: 100vh; /* Full màn hình */
-      padding-top: 40px; /* Chừa chỗ cho header */
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 100vh;
+      padding-top: 45px;
+      position: relative;
     }
 
     iframe {
@@ -35,34 +38,58 @@
       height: 100%;
       border: none;
       background: #fff;
+      display: block;
+    }
+
+    .chart-label {
+      position: absolute;
+      bottom: 12px; left: 12px;
+      background: rgba(0, 0, 0, 0.75);
+      color: #7DD3FC;
+      padding: 5px 12px;
+      font-size: 11px;
+      border-radius: 4px;
+      z-index: 10;
+      pointer-events: none;
+      backdrop-filter: blur(4px);
     }
   </style>
 </head>
 <body>
 
   <header class="header">
-    <span>📊 BÁO CÁO GIẢI NGÂN 2026</span>
-    <span id="currentDate"></span>
+    <span>📊 BÁO CÁO GIẢI NGÂN 2026 - BAN GIAO THÔNG & NÔNG NGHIỆP ĐN</span>
+    <div class="nav-links">
+      <span>Đến nhanh:</span>
+      <a href="#chart1">#1</a>
+      <a href="#chart2">#2</a>
+      <a href="#chart3">#3</a>
+      <a href="#chart4">#4</a>
+    </div>
   </header>
 
-  <!-- Danh sách 4 biểu đồ, mỗi cái nằm trong 1 section 100vh -->
   <main>
-    <section class="chart-section">
-      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQU6bsIA9CA1emcyNU8AMBx3eONAN1Q4B5iJA9MPhKxcb-RSwxuTktiT9LWHHxAg6aBrzWnjs4xGqdN/pubchart?oid=353496612&format=interactive"></iframe>
+    <section class="chart-section" id="chart1">
+      <div class="chart-label">Biểu đồ 1 (oid=353496612)</div>
+      <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQU6bsIA9CA1emcyNU8AMBx3eONAN1Q4B5iJA9MPhKxcb-RSwxuTktiT9LWHHxAg6aBrzWnjs4xGqdN/pubchart?oid=353496612&format=interactive"></iframe>
     </section>
-    <section class="chart-section">
-      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQU6bsIA9CA1emcyNU8AMBx3eONAN1Q4B5iJA9MPhKxcb-RSwxuTktiT9LWHHxAg6aBrzWnjs4xGqdN/pubchart?oid=1859141905&format=interactive"></iframe>
+
+    <section class="chart-section" id="chart2">
+      <div class="chart-label">Biểu đồ 2 (oid=1859141905)</div>
+      <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQU6bsIA9CA1emcyNU8AMBx3eONAN1Q4B5iJA9MPhKxcb-RSwxuTktiT9LWHHxAg6aBrzWnjs4xGqdN/pubchart?oid=1859141905&format=interactive"></iframe>
     </section>
-    <section class="chart-section">
-      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQU6bsIA9CA1emcyNU8AMBx3eONAN1Q4B5iJA9MPhKxcb-RSwxuTktiT9LWHHxAg6aBrzWnjs4xGqdN/pubchart?oid=1002026926&format=interactive"></iframe>
+
+    <!-- Biểu đồ số 3 đã cập nhật link chính xác -->
+    <section class="chart-section" id="chart3">
+      <div class="chart-label">Biểu đồ 3 (oid=1002026926)</div>
+      <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQU6bsIA9CA1emcyNU8AMBx3eONAN1Q4B5iJA9MPhKxcb-RSwxuTktiT9LWHHxAg6aBrzWnjs4xGqdN/pubchart?oid=1002026926&amp;format=interactive"></iframe>
     </section>
-    <section class="chart-section">
-      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQU6bsIA9CA1emcyNU8AMBx3eONAN1Q4B5iJA9MPhKxcb-RSwxuTktiT9LWHHxAg6aBrzWnjs4xGqdN/pubchart?oid=1551123399&format=interactive"></iframe>
+
+    <section class="chart-section" id="chart4">
+      <div class="chart-label">Biểu đồ 4 (oid=1551123399)</div>
+      <iframe loading="lazy" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQU6bsIA9CA1emcyNU8AMBx3eONAN1Q4B5iJA9MPhKxcb-RSwxuTktiT9LWHHxAg6aBrzWnjs4xGqdN/pubchart?oid=1551123399&format=interactive"></iframe>
     </section>
   </main>
 
-  <script>
-    document.getElementById('currentDate').textContent = new Date().toLocaleDateString('vi-VN');
-  </script>
 </body>
 </html>
