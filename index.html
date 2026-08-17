@@ -60,26 +60,26 @@
       white-space: nowrap;
     }
 
-    /* === MAIN CONTENT - FULLSCREEN CHARTS === */
+    /* === MAIN CONTENT - VERTICAL CHARTS === */
     .main-wrap {
       height: calc(100vh - 52px);
       width: 100%;
       padding: 0;
       background: #e8ecf1;
       display: flex;
+      flex-direction: column;
       gap: 0;
     }
     .chart-container {
       flex: 1;
-      border-radius: 0;
       overflow: hidden;
       background: #ffffff;
       position: relative;
-      min-width: 0;
-      height: 100%;
+      min-height: 0;
+      width: 100%;
     }
-    .chart-container:first-child {
-      border-right: 2px solid #e8ecf1;
+    .chart-container:not(:last-child) {
+      border-bottom: 2px solid #e8ecf1;
     }
     .chart-container iframe {
       position: absolute;
@@ -103,8 +103,7 @@
         flex-direction: column;
         gap: 0;
       }
-      .chart-container:first-child {
-        border-right: none;
+      .chart-container:not(:last-child) {
         border-bottom: 2px solid #e8ecf1;
       }
     }
@@ -120,8 +119,7 @@
         flex-direction: column;
         gap: 0;
       }
-      .chart-container:first-child {
-        border-right: none;
+      .chart-container:not(:last-child) {
         border-bottom: 2px solid #e8ecf1;
       }
     }
@@ -162,6 +160,16 @@
         frameborder="0" 
         scrolling="no" 
         src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQU6bsIA9CA1emcyNU8AMBx3eONAN1Q4B5iJA9MPhKxcb-RSwxuTktiT9LWHHxAg6aBrzWnjs4xGqdN/pubchart?oid=1859141905&amp;format=interactive">
+      </iframe>
+    </div>
+    <div class="chart-container">
+      <iframe 
+        width="1773" 
+        height="1096" 
+        seamless 
+        frameborder="0" 
+        scrolling="no" 
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQU6bsIA9CA1emcyNU8AMBx3eONAN1Q4B5iJA9MPhKxcb-RSwxuTktiT9LWHHxAg6aBrzWnjs4xGqdN/pubchart?oid=1866793920&amp;format=interactive">
       </iframe>
     </div>
   </div>
