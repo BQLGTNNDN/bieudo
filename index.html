@@ -60,26 +60,42 @@
       white-space: nowrap;
     }
 
-    /* === MAIN CONTENT - VERTICAL CHARTS === */
+    /* === MAIN CONTENT - SCROLLABLE VERTICAL CHARTS === */
     .main-wrap {
       height: calc(100vh - 52px);
       width: 100%;
-      padding: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
       background: #e8ecf1;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+      padding: 8px;
     }
+    .main-wrap::-webkit-scrollbar {
+      width: 8px;
+    }
+    .main-wrap::-webkit-scrollbar-track {
+      background: #d1d5db;
+      border-radius: 4px;
+    }
+    .main-wrap::-webkit-scrollbar-thumb {
+      background: #1B3A6B;
+      border-radius: 4px;
+    }
+    .main-wrap::-webkit-scrollbar-thumb:hover {
+      background: #0a1628;
+    }
+
     .chart-container {
-      flex: 1;
-      overflow: hidden;
-      background: #ffffff;
-      position: relative;
-      min-height: 0;
       width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,.07);
+      position: relative;
+      margin-bottom: 12px;
     }
-    .chart-container:not(:last-child) {
-      border-bottom: 2px solid #e8ecf1;
+    .chart-container:last-child {
+      margin-bottom: 0;
     }
     .chart-container iframe {
       position: absolute;
@@ -100,11 +116,15 @@
       .topbar-right .date { font-size: 10px; padding: 2px 10px; }
       .main-wrap { 
         height: calc(100vh - 48px);
-        flex-direction: column;
-        gap: 0;
+        padding: 6px;
       }
-      .chart-container:not(:last-child) {
-        border-bottom: 2px solid #e8ecf1;
+      .chart-container {
+        border-radius: 8px;
+        margin-bottom: 8px;
+        aspect-ratio: 16 / 9;
+      }
+      .main-wrap::-webkit-scrollbar {
+        width: 6px;
       }
     }
 
@@ -116,11 +136,15 @@
       .topbar-right .date { font-size: 9px; padding: 2px 8px; }
       .main-wrap { 
         height: calc(100vh - 44px);
-        flex-direction: column;
-        gap: 0;
+        padding: 4px;
       }
-      .chart-container:not(:last-child) {
-        border-bottom: 2px solid #e8ecf1;
+      .chart-container {
+        border-radius: 6px;
+        margin-bottom: 6px;
+        aspect-ratio: 16 / 9;
+      }
+      .main-wrap::-webkit-scrollbar {
+        width: 4px;
       }
     }
   </style>
